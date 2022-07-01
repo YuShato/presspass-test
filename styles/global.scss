@@ -1,3 +1,16 @@
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: $light_gray;
+  margin: 0;
+}
+
 .button {
   padding: 16px 44px;
   font-weight: 600;
