@@ -1,0 +1,16 @@
+.footer-list {
+  display: grid;
+  gap: 32px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.3px;
+  color: $dark_medium;
+  margin: 0;
+  margin-left: 104px;
+  margin-top: -3px;
+
+  &__link {
+    color: inherit;
+  }
+}

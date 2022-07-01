@@ -1,0 +1,11 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    width: 100vw;
+
+    &__logo {
+        margin: 3px;
+    }
+}

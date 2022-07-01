@@ -1,0 +1,28 @@
+.content {
+  margin: 30px auto;
+  max-width: 800px;
+
+  &__header {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.5px;
+    color: $dark_high;
+  }
+
+  &__nav {
+    display: block;
+    color: $accent;
+    padding-bottom: 15px;
+  }
+
+  &__arrow {
+    display: inline-block;
+    font-size: 24px;
+    padding-right: 5px;
+  }
+
+  &__form {
+    margin-bottom: 100px;
+  }
+}
