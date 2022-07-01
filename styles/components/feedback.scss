@@ -5,6 +5,11 @@
   margin: 0;
   align-content: flex-start;
 
+  @include for-phone-only {
+    padding-left: 5px;
+    width: 340px;
+  }
+
   &__mail {
     padding-left: 36px;
   }

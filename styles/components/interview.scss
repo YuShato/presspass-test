@@ -5,6 +5,11 @@
     padding: 0;
     padding-top: 15px;
     margin-bottom: 46px;
+
+    @include for-phone-only {
+      gap: 21px;
+      margin-bottom: 38px;
+    }
   }
 
   &__fieldset {
@@ -16,9 +21,16 @@
       0px 24px 52px rgba(0, 51, 91, 0.02);
     border-radius: 12px;
     border: none;
+
+    @include for-phone-only {
+      max-width: 100vw;
+      border-radius: 0;
+      padding: 17px 20px 31px;
+    }
   }
 
   &__subtitle {
+    display: flex;
     font-weight: 600;
     font-size: 18px;
     line-height: 24px;
@@ -26,6 +38,12 @@
     color: $dark_high;
     margin-top: 0;
     margin-bottom: 11px;
+
+    @include for-phone-only {
+      letter-spacing: 0;
+      max-width: 300px;
+      padding-top: 5px;
+    }
   }
 
   &__count {
@@ -35,12 +53,20 @@
     line-height: 24px;
     letter-spacing: 0.5px;
     color: $accent_medium;
+
+    @include for-phone-only {
+      padding-right: 15px;
+    }
   }
 
   &__location {
     display: flex;
     gap: 34px;
     margin-top: 8px;
+
+    @include for-phone-only {
+      flex-wrap: wrap;
+    }
   }
 
   &__geo {
@@ -50,14 +76,12 @@
     letter-spacing: 0.5px;
   }
 
-
   &__add-img {
     padding-left: 30px;
 
     & > input {
       display: none;
     }
-
   }
 
   &__text {
@@ -81,5 +105,10 @@
   &__submit {
     display: block;
     margin: 0 auto;
+
+    @include for-phone-only {
+      width: 100%;
+      max-width: 325px;
+    }
   }
 }

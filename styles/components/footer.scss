@@ -9,11 +9,21 @@
       display: flex;
       flex-wrap: wrap;
     }
+
+    @include for-phone-only {
+      gap: 40px;
+      padding-top: 25px;
+      padding-bottom: 60px;
+    }
   }
 
   &__nav {
     width: 100%;
     max-width: 280px;
+  }
+
+  @include for-phone-only {
+    max-width: 320px;
   }
 
   &__logo > img {

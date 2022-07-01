@@ -6,6 +6,10 @@
     max-width: 86vw;
   }
 
+  @include for-phone-only {
+    margin-top: 20px;
+  }
+
   &__header {
     font-weight: 700;
     font-size: 40px;
@@ -17,12 +21,29 @@
       font-size: 30px;
       line-height: 36px;
     }
+
+    @include for-phone-only {
+      max-width: 220px;
+      margin-left: 25px;
+      letter-spacing: 0;
+    }
+  }
+
+  @include for-phone-only {
+    & {
+      max-width: 100vw;
+    }
   }
 
   &__nav {
     display: block;
     color: $accent;
     padding-bottom: 15px;
+
+    @include for-phone-only {
+      margin-left: 20px;
+      padding-bottom: 7px;
+    }
   }
 
   &__arrow {
@@ -33,5 +54,9 @@
 
   &__form {
     margin-bottom: 100px;
+
+    @include for-phone-only {
+      margin-bottom: 64px;
+    }
   }
 }
