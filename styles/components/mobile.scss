@@ -1,0 +1,21 @@
+.mobile-nav {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.3px;
+  display: grid;
+  gap: 20px;
+  padding: 0 20px;
+
+  @include for-medium-screen-up {
+    &__link {
+      cursor: pointer;
+      color: $accent;
+      transition: 0.3s all;
+
+      &:hover {
+        color: $accent_medium;
+      }
+    }
+  }
+}

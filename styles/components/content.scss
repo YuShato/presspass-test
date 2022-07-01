@@ -2,12 +2,21 @@
   margin: 30px auto;
   max-width: 800px;
 
+  @include for-desktop-up {
+    max-width: 86vw;
+  }
+
   &__header {
     font-weight: 700;
     font-size: 40px;
     line-height: 48px;
     letter-spacing: -0.5px;
     color: $dark_high;
+
+    @include for-desktop-up {
+      font-size: 30px;
+      line-height: 36px;
+    }
   }
 
   &__nav {

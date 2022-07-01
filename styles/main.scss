@@ -2,9 +2,12 @@
 @import "./fonts.scss";
 @import "./typogpaphy.scss";
 @import "./global.scss";
+// mixins
+@import "./mixins.scss";
 // components
 @import "./components/header.scss";
 @import "./components/nav.scss";
+@import "./components/mobile.scss";
 @import "./components/content.scss";
 @import "./components/interview.scss";
 @import "./components/form-control.scss";
@@ -12,3 +15,4 @@
 @import "./components/footer.scss";
 @import "./components/footer-list.scss";
 @import "./components/feedback.scss";
+@import "./components/modal.scss";
