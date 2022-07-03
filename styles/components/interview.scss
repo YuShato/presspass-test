@@ -111,4 +111,16 @@
       max-width: 325px;
     }
   }
+
+  &__geo-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__geo-message {
+    display: block;
+    max-width: 280px;
+    font-size: 10px;
+    color: $accent_medium;
+  }
 }

@@ -39,24 +39,24 @@
           <button class="header__mobile-btn"></button>
           <div class="header__modal modal">
             <button class="modal__close-btn">X</button>
-          <ul class="header__mobile-nav mobile-nav">
-            <li class="mobile-nav__item">
-              <a href="#" class="mobile-nav__link">О&nbsp;Находке</a>
-            </li>
-            <li class="mobile-nav__item">
-              <a href="#" class="mobile-nav__link">Пройдите&nbsp;опрос</a>
-            </li>
-            <li class="mobile-nav__item">
-              <a href="#" class="mobile-nav__link">Проекты&nbsp;Находки</a>
-            </li>
-            <li class="mobile-nav__item">
-              <a href="#" class="mobile-nav__link">Обсуждения</a>
-            </li>
-            <li class="mobile-nav__item">
-              <a href="#" class="mobile-nav__link">Новости</a>
-            </li>
-          </ul>
-        </div>
+            <ul class="header__mobile-nav mobile-nav">
+              <li class="mobile-nav__item">
+                <a href="#" class="mobile-nav__link">О&nbsp;Находке</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="#" class="mobile-nav__link">Пройдите&nbsp;опрос</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="#" class="mobile-nav__link">Проекты&nbsp;Находки</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="#" class="mobile-nav__link">Обсуждения</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="#" class="mobile-nav__link">Новости</a>
+              </li>
+            </ul>
+          </div>
         </div>
         <!-- mobile nav end -->
       </div>
@@ -70,7 +70,12 @@
         </a>
         <h1 class="content__header">Поделитесь идеей</h1>
         <!-- form start -->
-        <form action="#" class="content__form interview">
+        <form
+          action="#"
+          class="content__form interview"
+          id="form"
+          method="post"
+        >
           <ul class="interview__list">
             <!-- fieldset 1 -->
             <li class="interview__list-item">
@@ -85,6 +90,8 @@
                     type="radio"
                     name="status"
                     id="local"
+                    value="Местный житель"
+                    required
                   />
                   Местный житель
                 </label>
@@ -94,6 +101,7 @@
                     type="radio"
                     name="status"
                     id="guest"
+                    value="Гость города"
                   />
                   Гость города
                 </label>
@@ -112,6 +120,8 @@
                     type="radio"
                     name="age"
                     id="age0"
+                    value="До 18"
+                    required
                   />
                   До 18
                 </label>
@@ -122,6 +132,7 @@
                     type="radio"
                     name="age"
                     id="age1"
+                    value="19-25"
                   />
                   19-25
                 </label>
@@ -132,6 +143,7 @@
                     type="radio"
                     name="age"
                     id="age2"
+                    value="26-35"
                   />
                   26-35
                 </label>
@@ -142,6 +154,7 @@
                     type="radio"
                     name="age"
                     id="age3"
+                    value="36-45"
                   />
                   36-45
                 </label>
@@ -152,6 +165,7 @@
                     type="radio"
                     name="age"
                     id="age4"
+                    value="46-55"
                   />
                   46-55
                 </label>
@@ -162,6 +176,7 @@
                     type="radio"
                     name="age"
                     id="age5"
+                    value="56-65"
                   />
                   56-65
                 </label>
@@ -172,6 +187,7 @@
                     type="radio"
                     name="age"
                     id="age6"
+                    value="Больше 66"
                   />
                   Больше 66
                 </label>
@@ -190,6 +206,8 @@
                     type="radio"
                     name="problem"
                     id="problem1"
+                    value="О проблеме и ее решении"
+                    required
                   />
                   О проблеме и ее решении
                 </label>
@@ -200,6 +218,7 @@
                     type="radio"
                     name="problem"
                     id="problem2"
+                    value="О идее города"
                   />
                   О идее города
                 </label>
@@ -210,6 +229,7 @@
                     type="radio"
                     name="problem"
                     id="problem3"
+                    value="Об уникальных интересных местах Находки"
                   />
                   Об уникальных интересных местах Находки
                 </label>
@@ -220,12 +240,22 @@
               <fieldset class="interview__fieldset">
                 <h2 class="interview__subtitle">
                   <span class="interview__count">4</span>
-                  Загрузите&nbsp;картинку&nbsp;и&nbsp;укажите место&nbsp;на&nbsp;карте
+                  Загрузите&nbsp;картинку&nbsp;и&nbsp;укажите
+                  место&nbsp;на&nbsp;карте
                 </h2>
                 <div class="interview__location">
-                  <button class="interview__geo accent-link accent-link--geo">
-                    Указать геолокацию
-                  </button>
+                  <div class="interwiew__geo-wrapper">
+                    <button
+                      class="interview__geo accent-link accent-link--geo"
+                      id="geo"
+                    >
+                      Указать геолокацию
+                    </button>
+                    <span
+                      class="interview__geo-message"
+                      id="locationMessage"
+                    ></span>
+                  </div>
                   <label
                     for="addImg"
                     class="interview__add-img accent-link accent-link--picture"
@@ -235,6 +265,7 @@
                       name="addImg"
                       id="addImg"
                       accept="image/png, image/jpeg"
+                      required
                     />
                     Добавить изображение
                   </label>
@@ -254,6 +285,9 @@
                   name="theme"
                   id="theme"
                   placeholder="Тема"
+                  required
+                  minlength="4"
+                  maxlength="50"
                 />
                 <textarea
                   class="interview__text"
@@ -262,6 +296,9 @@
                   cols="30"
                   rows="4"
                   placeholder="Идея"
+                  required
+                  minlength="10"
+                  maxlength="250"
                 ></textarea>
                 <label for="agreement" class="interview__agreement agreement">
                   <input
@@ -269,6 +306,7 @@
                     class="agreement__checkbox option-input checkbox"
                     name="agreement"
                     id="agreement"
+                    required
                   />
                   Я согласен с
                   <a href="#" class="agreement__link">
@@ -300,7 +338,9 @@
             <a href="#" class="footer-list__link">Пройдите опрос</a>
           </li>
           <li class="footer-list__item">
-            <a href="#" class="footer-list__link">План&nbsp;комплексного&nbsp;развития</a>
+            <a href="#" class="footer-list__link"
+              >План&nbsp;комплексного&nbsp;развития</a
+            >
           </li>
           <li class="footer-list__item">
             <a href="#" class="footer-list__link">Обсуждения</a>
